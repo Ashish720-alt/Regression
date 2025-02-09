@@ -1,12 +1,15 @@
 # Regression
 Predicting Deaths Caused by Cancer
 
+# Run
+Run python3 main.py on terminal
+
 # List of possible metrics which can be used:
 Key Metrics:
 Regression: RMSE, MAE, R2-score.
 Classification: Accuracy, precision, recall, F1-score, AUC-ROC.
 
-# Pipeline Algorithmo of main.py
+# Pipeline Algorithm of main.py
 Step 1: Split the Dataset
     Divide the data into:
         1. Training set (60%): For training the model.
