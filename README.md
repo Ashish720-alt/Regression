@@ -84,3 +84,25 @@ Step 6: Evaluate on the Test Set
     Once the model performs well on the validation set:
         Train it on the entire training + validation set using the best hyperparameters.
     Evaluate final performance on the test set.
+
+
+# A note: Variants of Linear Regression for Modelling Real Valued Functions.
+
+1. Ridge regression or Tikhanov Regression.
+   Note that in standard linear regression with regularization, the cost function is given by || θ X - y ||_2^2 + α ||  θ ||_2^2 , where X is the 
+   data matrix where a column represents a single datapoint, θ is the learned parameters as a row vector and α is the regularization parameter.
+
+   Then ridge regression has the cost function || θ X - y ||_2^2 + || M θ ||_2^2 , where M is a matrix called Tikhanov matrix. If you take M = α I, then
+   you get standard regression also called L2 regularization.
+
+2. Lasso Regression.
+   This is simply L1 regularization i.e. the cost function is || θ X - y ||_2^2 + α || θ ||_1
+
+3. Polynomial Regression.
+   Here the cost function is the same as L2-regularization however the model is no longer y_pred = θ x, instead it is:
+
+   For some natural m, let X'(xi) be defined as the column matrix X'(xi) = [1, xi, xi^2, xi^3, ... xi^m ]^T. Then if β_j is any row vector of learnable
+   parameters, the model assumed is:
+   y =  ∑_i β_i * X'(xi)
+
+   (Note that the polynomial terms are only in the same variable, no cross-polynomial terms.)
